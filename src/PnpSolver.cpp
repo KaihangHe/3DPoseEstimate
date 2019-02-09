@@ -91,5 +91,4 @@ void PnpSolver::Show3DView(std::string windows_name, cv::Mat &camera_model_image
         visualWindow.spinOnce(1, true);
     }
 }
-
 #endif

@@ -11,55 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="723f4b0c-135f-4864-ab44-871db4ae7751" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFM.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Calibrator.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Calibrator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/PnpSolver.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/PnpSolver.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calibrator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calibrator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/水瓶/0cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/水瓶/10cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/水瓶/15cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/水瓶/5cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181847060-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181850445-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181852868-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181855928-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181858712-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181913118-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181916266-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181919034-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181921881-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181925326-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181929566-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181931574-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181934686-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181937739-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181939450-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181941842-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181944511-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181946905-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181949121-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181951474-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181954764-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-181957472-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-182000718-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/科研训练工业相机标定用图片/20190130-182007054-BW.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/花盆/0cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/花盆/10cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/花盆/15cm.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/科研训练测试图片/花盆/5cm.bmp" beforeDir="false" />
-    </list>
+    <list default="true" id="723f4b0c-135f-4864-ab44-871db4ae7751" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,14 +22,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="224">
+              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PnpSolver.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="568">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
         </entry>
@@ -119,6 +80,7 @@
         <option value="$PROJECT_DIR$/params/ImagePoints.yml" />
         <option value="$PROJECT_DIR$/src/Calibrator.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/PnpSolver.cpp" />
       </list>
     </option>
   </component>
@@ -144,12 +106,7 @@
             <path>
               <item name="SFM" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="cmake-build-debug" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="SFM" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="params" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="include" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="SFM" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -204,12 +161,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549714912624</updated>
       <workItem from="1549714915036" duration="4453000" />
-      <workItem from="1549720092758" duration="1221000" />
+      <workItem from="1549720092758" duration="1488000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5674000" />
+    <option name="totallyTimeSpent" value="5941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1047" extended-state="6" />
@@ -220,14 +177,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16136114" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33809" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32930845" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.233809" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.10867179" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32968238" />
@@ -311,6 +268,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Calibrator.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -318,13 +285,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+    <entry file="file://$PROJECT_DIR$/src/PnpSolver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="568">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
