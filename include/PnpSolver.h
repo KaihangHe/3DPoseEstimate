@@ -11,7 +11,6 @@
 #include"External_Variables.h"
 #define  VIZ3D 6
 class PnpSolver {
-
 public:
     /*!
      * Create a PnpSolver object

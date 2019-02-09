@@ -41,6 +41,8 @@ public:
     void save_calibrate_result(std::string output_file_name);
     static void read_calibrate_result(std::string int_file_name);
     static cv::Mat remap_correct(const cv::Mat &srcImage);
+    static void saveImagePoints(std::string output_filename,std::vector<cv::Point2f>imagePoints,std::vector<cv::Point3f>objectPoints);
+    static void readImagePoints(std::string output_filename,std::vector<cv::Point2f> &imagePoints,std::vector<cv::Point3f>&objectPoints);
 private:
     /*!
      * add points to ready calibrate
@@ -65,6 +67,8 @@ private:
             std::vector<cv::Point2f> a_ImagePoints,
             std::vector<cv::Point3f> a_objectPoits
     );
+
+
 };
 
 #endif //SFMREBUILD_CALIBRATOR_H

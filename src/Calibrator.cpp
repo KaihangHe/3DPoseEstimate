@@ -62,6 +62,8 @@ int Calibrator::addChessBoardPoins(
             std::cout << "未找到角点\n" << std::endl;
         }
         cv::drawChessboardCorners(srcImage,board_size,image_corners,true);
+//        saveImagePoints("../params/featurePoints.yml",image_corners,object_corners);
+        cv::namedWindow("dstImage",cv::WINDOW_NORMAL);
         cv::imshow("dstImage", srcImage);
         cv::waitKey();
     }
@@ -125,5 +127,45 @@ void Calibrator::read_calibrate_result(std::string input_file_name) {
     std::cout<<"camera_Matrix"<<camera_Matrix<<std::endl;
     std::cout<<"dist_Coeffs"<<dist_Coeffs<<std::endl;
     std::cout<<"------------------------------------------"<<dist_Coeffs<<std::endl;
+    fs.release();
+}
+void Calibrator::saveImagePoints(std::string output_filename,std::vector<cv::Point2f>imagePoints,std::vector<cv::Point3f>objectPoints)
+{
+    cv::FileStorage fs(output_filename,cv::FileStorage::WRITE);
+    std::cout<<"Save ImagePoints"<<std::endl;
+    fs<<"image_points"<<"[";
+    for(auto pt:imagePoints)
+    {
+        fs<<pt;
+        std::cout<<pt<<std::endl;
+    }
+    fs<<"]";
+    fs<<"objectPoints"<<"[";
+    for(auto pt:objectPoints)
+    {
+        fs<<pt;
+        std::cout<<pt<<std::endl;
+    }
+    fs<<"]";
+    fs.release();
+}
+void Calibrator::readImagePoints(std::string output_filename,std::vector<cv::Point2f> &imagePoints,std::vector<cv::Point3f>&objectPoints){
+    cv::FileStorage fs(output_filename,cv::FileStorage::READ);
+    std::cout<<"Read ImagePoints"<<std::endl;
+    for(auto tmp_pt:fs["image_points"])
+    {
+        static int i=0;
+        cv::Point2f pt=cv::Point2f((float)tmp_pt[0],(float)tmp_pt[1]);
+        imagePoints.emplace_back(pt);
+        std::cout<<i++<<" = "<<pt<<std::endl;
+    }
+    std::cout<<"Read ObjectPoints"<<std::endl;
+    for(auto tmp_pt:fs["objectPoints"])
+    {
+        static int i=0;
+        cv::Point3f pt=cv::Point3f((float)tmp_pt[0],(float)tmp_pt[1],(float)tmp_pt[2]);
+        objectPoints.emplace_back(pt);
+        std::cout<<i++<<" = "<<pt<<std::endl;
+    }
     fs.release();
 }
