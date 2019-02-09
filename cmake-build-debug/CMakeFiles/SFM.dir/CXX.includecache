@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Calibrator.h
+opencv2/opencv.hpp
+-
+cstdlib
+-
+iostream
+-
+
+../include/PnpSolver.h
+opencv4/opencv2/opencv.hpp
+-
+cstdlib
+-
+cmath
+-
+External_Variables.h
+../include/External_Variables.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.cpp
+Calibrator.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.cpp
+PnpSolver.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/main.cpp
+iostream
+-
+
