@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -37,6 +37,18 @@ cmath
 -
 External_Variables.h
 ../include/External_Variables.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.cpp
+Calibrator.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/FeaturesPts.cpp
+FeaturesPts.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/FeaturesPts.h
+
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.cpp
+PnpSolver.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.h
 
 /home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/main.cpp
 iostream
