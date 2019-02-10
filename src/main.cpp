@@ -7,7 +7,7 @@
 #include "External_Variables.h"
 using std::cout;
 using std::endl;
-
+#define DEBUG(x) cout<<"DEBUG  "<<x<<endl;
 int main() {
     std::vector<cv::Mat> Image = {cv::imread("../others/images/水瓶/0cm.bmp"),
                                   cv::imread("../others/images/水瓶/10cm.bmp")};
@@ -29,17 +29,51 @@ int main() {
     cv::Mat dstImage;
     cv::hconcat(Image[0],Image[1],dstImage);
     cv::namedWindow("dst",cv::WINDOW_NORMAL);
-    cv::imshow("dst",dstImage);
+//    cv::imshow("dst",dstImage);
     ///////////////////////////////////////////////////////////////////////////////////////////////
     cv::Mat inliers,essential;
     essential=cv::findEssentialMat(object_points[0],object_points[1],Calibrator::camera_Matrix);
-    cv::Mat_ <double>rotaion,translation;
+    cv::Mat rotaion,translation;
     cv::recoverPose(essential,object_points[0],object_points[1],Calibrator::camera_Matrix,rotaion,translation,inliers);
+    cv::Mat projection2 (3,4,CV_64F);
+    rotaion.copyTo(projection2(cv::Rect(0,0,3,3)));
+    translation.copyTo(projection2.colRange(3,4));
+    cv::Mat projection1 (3,4,CV_64F,0.);
+    cv::Mat diag(cv::Mat::eye(3,3,CV_64F));
+    diag.copyTo(projection1(cv::Rect(0,0,3,3)));
+    std::vector<cv::Vec2d>inlierPts1,inlierPts2;
+    int j(0);
+    for(int i=0;i<inliers.rows;i++){
+        if(inliers.at<uchar>(i)){
+            inlierPts1.emplace_back(cv::Vec2d(object_points[0][i].x,object_points[0][i].y));
+            inlierPts2.emplace_back(cv::Vec2d(object_points[1][i].x,object_points[1][i].y));
+        }
+    }
+    cout<<"\n\n\n\n"<<inlierPts2[0]<<endl;
+    std::vector<cv::Vec2d>points1u,points2u;
+    cv::undistortPoints(inlierPts1,points1u,Calibrator::camera_Matrix,Calibrator::dist_Coeffs);
+    cv::undistortPoints(inlierPts2,points2u,Calibrator::camera_Matrix,Calibrator::dist_Coeffs);
+    std::vector<cv::Vec4d>points3D;
+    cv::Mat_<double> tmpMat;
+    cv::triangulatePoints(projection1,projection2,points1u,points2u,tmpMat);
+    cout<<tmpMat.cols<<endl;
+    DEBUG(1)
+    std::vector<cv::Point3d>Points3D_output;
+    for(auto pt:points3D)
+    {
+        cv::Point3d pt3d=cv::Point3d(pt[0],pt[1],pt[2]);
+        cout<<pt3d<<endl;
+        Points3D_output.emplace_back(pt3d);
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////
     cv::viz::Viz3d visualWindow("viz");
-    cv::viz::WCameraPosition cam_0(cv::Matx33d(Calibrator::camera_Matrix), Image[0], 50, cv::viz::Color::blue());
-    visualWindow.showWidget("Camera", cam_0);
-    visualWindow.showWidget("Coordinate Widget", cv::viz::WCoordinateSystem(10.0));
+    cv::viz::WCameraPosition cam_0(cv::Matx33d(Calibrator::camera_Matrix), Image[0], 1.5, cv::viz::Color::yellow());
+    cv::viz::WCameraPosition cam_1(cv::Matx33d(Calibrator::camera_Matrix), Image[1], 1.5, cv::viz::Color::yellow());
+    visualWindow.showWidget("Camera0", cam_0);
+    visualWindow.showWidget("Camera1", cam_1);
+    cv::Affine3d pose(rotaion,translation);
+    visualWindow.setWidgetPose("Camera1",pose);
+
     while (cv::waitKey(100) == -1 && !visualWindow.wasStopped()) {
         visualWindow.spinOnce(1, true);
     }

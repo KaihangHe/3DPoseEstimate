@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 project(SFM)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.0.1 REQUIRED)
 include_directories(include)
 set (
 src
