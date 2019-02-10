@@ -13,14 +13,14 @@ PnpSolver::PnpSolver(cv::Mat &camera_Matrix, cv::Mat &dist_Coeffs) {
 PnpSolver::~PnpSolver() {
 
 }
-
-infantry::Gun_Point_Data PnpSolver::GetGunData(cv::Point3f center_point) {
-    infantry::Gun_Point_Data data;
-    data.distance = (float) sqrt(pow(center_point.x, 2) + pow(center_point.y, 2) + pow(center_point.z, 2));
-    data.pitch = 90 - (float) acos(abs(center_point.y) / data.distance) / CV_PI * 180;
-    data.raw = 90 - (float) atan2(center_point.z, center_point.x) / CV_PI * 180;
-    return data;
-}
+//
+//infantry::Gun_Point_Data PnpSolver::GetGunData(cv::Point3f center_point) {
+//    infantry::Gun_Point_Data data;
+//    data.distance = (float) sqrt(pow(center_point.x, 2) + pow(center_point.y, 2) + pow(center_point.z, 2));
+//    data.pitch = 90 - (float) acos(abs(center_point.y) / data.distance) / CV_PI * 180;
+//    data.raw = 90 - (float) atan2(center_point.z, center_point.x) / CV_PI * 180;
+//    return data;
+//}
 
 void PnpSolver::Read_Const_Params(std::string const_params_path) {
     cv::FileStorage fs(const_params_path, cv::FileStorage::WRITE);
@@ -34,38 +34,38 @@ void PnpSolver::Read_Const_Params(std::string const_params_path) {
     fs.release();
 }
 
-cv::Point3f PnpSolver::GetCenterPoint(infantry::Armor &armors_input) {
-    infantry::Gun_Point_Data gun_point_data;
-    std::vector<cv::Point3f> object_points;
-    switch (armors_input.type) {
-        case infantry::TEST: {
-            object_points.emplace_back(cv::Point3f(0, 0, 0));
-            object_points.emplace_back(cv::Point3f(17.5, 0, 0));
-            object_points.emplace_back(cv::Point3f(17.5, 15, 0));
-            object_points.emplace_back(cv::Point3f(0, 15, 0));
-            break;
-        }
-        case infantry::SMALL_ARMOR: {
-            object_points.emplace_back(cv::Point3f(0, 0, 0));
-            object_points.emplace_back(cv::Point3f(0, 6, 0));
-            object_points.emplace_back(cv::Point3f(15, 6, 0));
-            object_points.emplace_back(cv::Point3f(15, 0, 0));
-            break;
-        }
-        case infantry::BIG_ARMOR: {
-            printf("asd");
-            break;
-        }
-    }
-    cv::Mat rvec, tvec;
-    cv::solvePnP(object_points, armors_input.armor_points, camera_matrix, dist_coeffs, rvec, tvec);
-    cv::Point3f center_point = (object_points[0] + object_points[2]) / 2;
-    double temp_points_val[3]{center_point.x, center_point.y, center_point.z};
-    cv::Mat_<double> rotation, temp_mat(3, 1, temp_points_val);
-    cv::Rodrigues(rvec, rotation);
-    temp_mat = rotation * temp_mat + tvec;
-    return cv::Point3f((float) temp_mat[0][0], (float) temp_mat[0][1], (float) temp_mat[0][2]);
-}
+//cv::Point3f PnpSolver::GetCenterPoint(infantry::Armor &armors_input) {
+//    infantry::Gun_Point_Data gun_point_data;
+//    std::vector<cv::Point3f> object_points;
+//    switch (armors_input.type) {
+//        case infantry::TEST: {
+//            object_points.emplace_back(cv::Point3f(0, 0, 0));
+//            object_points.emplace_back(cv::Point3f(17.5, 0, 0));
+//            object_points.emplace_back(cv::Point3f(17.5, 15, 0));
+//            object_points.emplace_back(cv::Point3f(0, 15, 0));
+//            break;
+//        }
+//        case infantry::SMALL_ARMOR: {
+//            object_points.emplace_back(cv::Point3f(0, 0, 0));
+//            object_points.emplace_back(cv::Point3f(0, 6, 0));
+//            object_points.emplace_back(cv::Point3f(15, 6, 0));
+//            object_points.emplace_back(cv::Point3f(15, 0, 0));
+//            break;
+//        }
+//        case infantry::BIG_ARMOR: {
+//            printf("asd");
+//            break;
+//        }
+//    }
+//    cv::Mat rvec, tvec;
+//    cv::solvePnP(object_points, armors_input.armor_points, camera_matrix, dist_coeffs, rvec, tvec);
+//    cv::Point3f center_point = (object_points[0] + object_points[2]) / 2;
+//    double temp_points_val[3]{center_point.x, center_point.y, center_point.z};
+//    cv::Mat_<double> rotation, temp_mat(3, 1, temp_points_val);
+//    cv::Rodrigues(rvec, rotation);
+//    temp_mat = rotation * temp_mat + tvec;
+//    return cv::Point3f((float) temp_mat[0][0], (float) temp_mat[0][1], (float) temp_mat[0][2]);
+//}
 
 #ifdef VIZ3D
 

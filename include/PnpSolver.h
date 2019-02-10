@@ -26,12 +26,12 @@ public:
      * Get a object center with 3d point
      * @param armors_input: a armor struct include four lightbar points and armor type
      */
-    cv::Point3f GetCenterPoint(infantry::Armor &armors_input);
+//    cv::Point3f GetCenterPoint(infantry::Armor &armors_input);
     /*!
      * Get GunData (include pitch,raw angles and distance )relative to camera
      * @param center_point: a 3d point
      */
-    static infantry::Gun_Point_Data GetGunData(cv::Point3f center_point);
+//    static infantry::Gun_Point_Data GetGunData(cv::Point3f center_point);
 #ifdef VIZ3D
     void Show3DView(
             std::string windows_name,

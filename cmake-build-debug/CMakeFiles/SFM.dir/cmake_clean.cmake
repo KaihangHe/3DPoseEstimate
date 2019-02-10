@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SFM.dir/src/main.cpp.o"
   "CMakeFiles/SFM.dir/src/PnpSolver.cpp.o"
   "CMakeFiles/SFM.dir/src/Calibrator.cpp.o"
+  "CMakeFiles/SFM.dir/src/FeaturesPts.cpp.o"
   "SFM.pdb"
   "SFM"
 )

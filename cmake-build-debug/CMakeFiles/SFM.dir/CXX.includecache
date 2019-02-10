@@ -18,6 +18,16 @@ iostream
 opencv4/opencv2/opencv.hpp
 -
 
+../include/FeaturesPts.h
+opencv2/opencv.hpp
+-
+External_Variables.h
+../include/External_Variables.h
+iostream
+-
+Calibrator.h
+../include/Calibrator.h
+
 ../include/PnpSolver.h
 opencv4/opencv2/opencv.hpp
 -
@@ -33,10 +43,16 @@ iostream
 -
 opencv2/opencv.hpp
 -
+unistd.h
+-
 Calibrator.h
 /home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.h
 PnpSolver.h
 /home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.h
+FeaturesPts.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/FeaturesPts.h
+External_Variables.h
+/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/External_Variables.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

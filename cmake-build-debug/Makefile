@@ -150,6 +150,33 @@ src/Calibrator.cpp.s:
 	$(MAKE) -f CMakeFiles/SFM.dir/build.make CMakeFiles/SFM.dir/src/Calibrator.cpp.s
 .PHONY : src/Calibrator.cpp.s
 
+src/FeaturesPts.o: src/FeaturesPts.cpp.o
+
+.PHONY : src/FeaturesPts.o
+
+# target to build an object file
+src/FeaturesPts.cpp.o:
+	$(MAKE) -f CMakeFiles/SFM.dir/build.make CMakeFiles/SFM.dir/src/FeaturesPts.cpp.o
+.PHONY : src/FeaturesPts.cpp.o
+
+src/FeaturesPts.i: src/FeaturesPts.cpp.i
+
+.PHONY : src/FeaturesPts.i
+
+# target to preprocess a source file
+src/FeaturesPts.cpp.i:
+	$(MAKE) -f CMakeFiles/SFM.dir/build.make CMakeFiles/SFM.dir/src/FeaturesPts.cpp.i
+.PHONY : src/FeaturesPts.cpp.i
+
+src/FeaturesPts.s: src/FeaturesPts.cpp.s
+
+.PHONY : src/FeaturesPts.s
+
+# target to generate assembly for a file
+src/FeaturesPts.cpp.s:
+	$(MAKE) -f CMakeFiles/SFM.dir/build.make CMakeFiles/SFM.dir/src/FeaturesPts.cpp.s
+.PHONY : src/FeaturesPts.cpp.s
+
 src/PnpSolver.o: src/PnpSolver.cpp.o
 
 .PHONY : src/PnpSolver.o
@@ -216,6 +243,9 @@ help:
 	@echo "... src/Calibrator.o"
 	@echo "... src/Calibrator.i"
 	@echo "... src/Calibrator.s"
+	@echo "... src/FeaturesPts.o"
+	@echo "... src/FeaturesPts.i"
+	@echo "... src/FeaturesPts.s"
 	@echo "... src/PnpSolver.o"
 	@echo "... src/PnpSolver.i"
 	@echo "... src/PnpSolver.s"

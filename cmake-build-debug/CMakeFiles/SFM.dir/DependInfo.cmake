@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.cpp" "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/cmake-build-debug/CMakeFiles/SFM.dir/src/Calibrator.cpp.o"
+  "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/FeaturesPts.cpp" "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/cmake-build-debug/CMakeFiles/SFM.dir/src/FeaturesPts.cpp.o"
   "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.cpp" "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/cmake-build-debug/CMakeFiles/SFM.dir/src/PnpSolver.cpp.o"
   "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/main.cpp" "/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/cmake-build-debug/CMakeFiles/SFM.dir/src/main.cpp.o"
   )

@@ -91,6 +91,9 @@
 		<Unit filename="/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/Calibrator.cpp">
 			<Option target="SFM"/>
 		</Unit>
+		<Unit filename="/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/FeaturesPts.cpp">
+			<Option target="SFM"/>
+		</Unit>
 		<Unit filename="/home/nicapoet/Projects/Local_Pro/CLionProjects/SFM/src/PnpSolver.cpp">
 			<Option target="SFM"/>
 		</Unit>
