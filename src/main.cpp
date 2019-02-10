@@ -5,27 +5,33 @@
 #include "PnpSolver.h"
 #include "FeaturesPts.h"
 #include "External_Variables.h"
-using namespace std;
-using namespace cv;
+
+using std::cout;
+using std::endl;
 
 int main() {
+    std::vector<cv::Mat> Image = {cv::imread("../others/images/水瓶/0cm.bmp"),
+                                  cv::imread("../others/images/水瓶/10cm.bmp")};
     Calibrator::read_calibrate_result("../params/camera_matrix.yml");
-    vector<cv::Mat>Image={cv::imread("../others/images/水瓶/0cm.bmp"),cv::imread("../others/images/水瓶/10cm.bmp")};
-    vector<vector<cv::Point2f>>object_points;
-    for(auto image:Image){
-        static int i,w=0;
-        vector<Point3f>tmp;
-        vector<Point2f>image_pts;
-        Calibrator::readImagePoints("../params/Image"+to_string(i)+"_Pts.yml",image_pts,tmp);
+    std::vector<std::vector<cv::Point2f>> object_points;
+    for (auto image:Image) {
+        static int i, w = 0;
+        std::vector<cv::Point3f> tmp;
+        std::vector<cv::Point2f> image_pts;
+        Calibrator::readImagePoints("../params/Image" + std::to_string(i) + "_Pts.yml", image_pts, tmp);
         object_points.push_back(image_pts);
-        for(auto pt:object_points[i])
-        {
-            circle(image,pt,5,Scalar(0,255,0),-1);
-            putText(image,to_string(w++),pt,0,1,Scalar(0,0,255));
+        for (auto pt:object_points[i]) {
+            cv::Scalar color = (i == 0 ? cv::Scalar(0,255,0):cv::Scalar(0,0,255));
+            circle(image, pt, 5, color, -1);
+            putText(image, std::to_string(w++), pt, 0, 0.7, color);
         }
-        imshow(to_string(i++),image);
-        w=0;
+        w = 0;
+        i++;
     }
-    waitKey();
+    cv::Mat dstImage;
+    cv::hconcat(Image[0],Image[1],dstImage);
+    cv::namedWindow("dst",cv::WINDOW_NORMAL);
+    cv::imshow("dst",dstImage);
+    cv::waitKey();
     return 0;
 }
