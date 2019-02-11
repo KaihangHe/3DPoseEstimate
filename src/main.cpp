@@ -49,22 +49,21 @@ int main() {
             inlierPts2.emplace_back(cv::Vec2d(object_points[1][i].x,object_points[1][i].y));
         }
     }
-    cout<<"\n\n\n\n"<<inlierPts2[0]<<endl;
     std::vector<cv::Vec2d>points1u,points2u;
     cv::undistortPoints(inlierPts1,points1u,Calibrator::camera_Matrix,Calibrator::dist_Coeffs);
     cv::undistortPoints(inlierPts2,points2u,Calibrator::camera_Matrix,Calibrator::dist_Coeffs);
-    std::vector<cv::Vec4d>points3D;
     cv::Mat_<double> tmpMat;
     cv::triangulatePoints(projection1,projection2,points1u,points2u,tmpMat);
-    cout<<tmpMat.cols<<endl;
-    DEBUG(1)
-    std::vector<cv::Point3d>Points3D_output;
-    for(auto pt:points3D)
+    cout<<tmpMat<<endl<<endl<<endl;
+    std::vector<cv::Point3f>cloudPoints;
+    for(int i=0;i<tmpMat.cols;i++)
     {
-        cv::Point3d pt3d=cv::Point3d(pt[0],pt[1],pt[2]);
-        cout<<pt3d<<endl;
-        Points3D_output.emplace_back(pt3d);
+        cv::Mat_<float>col=tmpMat.col(i);
+        col/=col(3);
+        cout<<cv::Point3f(col(0),col(1),col(2))<<endl;
+        cloudPoints.push_back(cv::Point3f(col(0),col(1),col(2)));
     }
+    DEBUG(1)
     ///////////////////////////////////////////////////////////////////////////////////////////////
     cv::viz::Viz3d visualWindow("viz");
     visualWindow.setBackgroundColor();
@@ -74,7 +73,8 @@ int main() {
     visualWindow.showWidget("Camera1", cam_1);
     cv::Affine3d pose(rotaion,translation);
     visualWindow.setWidgetPose("Camera1",pose);
-
+    cv::viz::WCloud cloud(cloudPoints,cv::viz::Color::green());
+    visualWindow.showWidget("cloud",cloud);
     while (cv::waitKey(100) == -1 && !visualWindow.wasStopped()) {
         visualWindow.spinOnce(1, true);
     }
