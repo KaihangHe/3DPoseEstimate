@@ -67,6 +67,7 @@ int main() {
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
     cv::viz::Viz3d visualWindow("viz");
+    visualWindow.setBackgroundColor();
     cv::viz::WCameraPosition cam_0(cv::Matx33d(Calibrator::camera_Matrix), Image[0], 1.5, cv::viz::Color::yellow());
     cv::viz::WCameraPosition cam_1(cv::Matx33d(Calibrator::camera_Matrix), Image[1], 1.5, cv::viz::Color::yellow());
     visualWindow.showWidget("Camera0", cam_0);
