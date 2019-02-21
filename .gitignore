@@ -2,3 +2,4 @@
 *.jpg
 /cmake-build-debug
 /.idea
+/others
