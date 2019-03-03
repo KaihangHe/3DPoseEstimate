@@ -4,16 +4,26 @@
 
 #ifndef SFM_FEATURESPTS_H
 #define SFM_FEATURESPTS_H
+
 #include<opencv2/opencv.hpp>
-#include"External_Variables.h"
 #include<iostream>
 #include "Calibrator.h"
+
 using std::cout;
 using std::endl;
-class FeaturesPts {
-public:
 
+class FeaturesPts
+{
+public:
+	static std::vector<cv::Point2f> readImagePoints(
+			std::string output_filename);
+
+	static void drawMatchImages(
+			std::vector<std::vector<cv::Point2f>> object_points,
+			std::vector<cv::Mat> &Images);
 
 private:
+
 };
+
 #endif //SFM_FEATURESPTS_H
