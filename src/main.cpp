@@ -28,8 +28,12 @@ int main() {
     }
     cv::Mat dstImage;
     cv::hconcat(Image[0],Image[1],dstImage);
-    cv::namedWindow("dst",cv::WINDOW_NORMAL);
-//    cv::imshow("dst",dstImage);
+////    cv::namedWindow("dst",cv::WINDOW_NORMAL);
+//	for_each(object_points[0].begin(),object_points[0].end(),
+//			[&](){
+//
+//	});
+    cv::imshow("dst",dstImage);
     ///////////////////////////////////////////////////////////////////////////////////////////////
     cv::Mat inliers,essential;
     essential=cv::findEssentialMat(object_points[0],object_points[1],Calibrator::camera_Matrix);
