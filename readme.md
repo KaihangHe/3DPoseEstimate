@@ -1,7 +1,6 @@
 # MultipleCameraSFM
 
 ##### by Nicapoet
----
 ### depends：
 - opencv 4.0.1 
      * contrib
@@ -30,5 +29,5 @@ _特征点对捕获_
 _工业相机驱动_
 ##### VizViewer
 _三维可视化模块_
-
+![ 点云三维视图 ](others/images/1.png)
  
