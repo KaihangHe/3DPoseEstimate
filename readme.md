@@ -2,6 +2,7 @@
 
 ##### by Nicapoet
 ### depends：
+- ubuntu 16.04
 - opencv 4.0.1 
      * contrib
      * viz
