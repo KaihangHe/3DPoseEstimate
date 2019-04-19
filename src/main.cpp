@@ -1,7 +1,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <unistd.h>
-#include<UnitTest.h>
+#include <UnitTest.h>
 
 using std::cout;
 using std::endl;
@@ -10,6 +10,6 @@ using std::endl;
 int main()
 {
 	UnitTest test;
-	test.Calibrator_test();
+	test.Feature_Points_Match_test();
 	return 0;
 }

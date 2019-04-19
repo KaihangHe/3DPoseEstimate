@@ -6,7 +6,7 @@
 #define SFM_VIZVIEWER_H
 
 #include<opencv2/opencv.hpp>
-
+#include<opencv2/viz.hpp>
 class VizViewer
 {
 private:

@@ -13,6 +13,7 @@ class UnitTest
 public:
 	void Calibrator_test();
 	void Cloud_test();
+	void Feature_Points_Match_test();
 };
 
 
