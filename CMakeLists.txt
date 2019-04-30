@@ -11,6 +11,7 @@ set(
         src/GireCamera.cpp
         src/VizViewer.cpp
         src/UnitTest.cpp)
+
 set(CMAKE_CXX_STANDARD 11)
 add_executable(SFM ${src})
 target_link_libraries(SFM ${OpenCV_LIBS})
