@@ -6,24 +6,26 @@
 #include <CameraDefine.h>
 #include "MindVisionCamera.h"
 
+int MindVisionCamera::camera_num = 0;
+tSdkCameraDevInfo MindVisionCamera::tCameraEnumList[2]={};
 MindVisionCamera::MindVisionCamera() : isRecord(false)
 {
 	isMindVisionCamera = true;
-	CameraSdkInit(1);
-	std::cout << "------[2]" << "CameraInit------" << std::endl;
-	int camera_counts = 1;
-	int status = CameraEnumerateDevice(&tCameraEnumList, &camera_counts);
-	if (status)
+	static int status;
+	if (!camera_num)
 	{
-		std::cout << "camera enum fail,error code=" << status << std::endl;
-		return;
+		std::cout << "CameraInit------" << std::endl;
+		CameraSdkInit(1);
+		int all_camera_num = 2;
+		status = CameraEnumerateDevice(tCameraEnumList, &all_camera_num);
+		if (status)
+		{
+			std::cout << "camera enum fail,error code=" << status << std::endl;
+			return;
+		}
 	}
-	if (!camera_counts)
-	{
-		std::cout << "camera_disconnect" << std::endl;
-		return;
-	}
-	status = CameraInit(&tCameraEnumList, -1, -1, &h_camera);
+	cout << "[ CAMERA " << camera_num << " ] " << tCameraEnumList[camera_num].acFriendlyName << endl;
+	status = CameraInit(&tCameraEnumList[camera_num], -1, -1, &h_camera);
 	if (status)
 	{
 		std::cout << "camera init fail" << std::endl;
@@ -37,23 +39,14 @@ MindVisionCamera::MindVisionCamera() : isRecord(false)
 			tCapability.sResolutionRange.iHeightMax * tCapability.sResolutionRange.iWidthMax * 3);
 	CameraGetImageResolution(h_camera, &tImageResolution);
 	CameraPlay(h_camera);
-//    tImageResolution.iIndex = 0xff;
-//    tImageResolution.iWidth = width;
-//    tImageResolution.iHeight = height;
-//    tImageResolution.iWidthFOV = width;
-//    tImageResolution.iHeightFOV = height;
-//    tImageResolution.iHOffsetFOV = (1280-width)>>1;
-//    tImageResolution.iVOffsetFOV = ((1024-height)>>1)+200;
-//    CameraSetImageResolution(h_camera, &tImageResolution);
-	//CameraPlay(h_camera);
-	// CameraSetMirror(h_camera,1, true);
-	// CameraSetMirror(h_camera,0, true);
+	camera_num++;
+}
 
-}
-MindVisionCamera::MindVisionCamera(int cam):cv::VideoCapture(cam)
+MindVisionCamera::MindVisionCamera(int cam) : cv::VideoCapture(cam)
 {
-	isMindVisionCamera=false;
+	isMindVisionCamera = false;
 }
+
 MindVisionCamera::~MindVisionCamera()
 {
 	CameraUnInit(h_camera);
@@ -88,7 +81,7 @@ void MindVisionCamera::SetExposureTime(double ExposureTime_ms)
 	CameraSetExposureTime(h_camera, ExposureTime_ms * 1000);
 }
 
-cv::VideoCapture& MindVisionCamera::operator>>(cv::Mat &frame)
+cv::VideoCapture &MindVisionCamera::operator>>(cv::Mat &frame)
 {
 	static VideoCapture *v1;
 	if (isMindVisionCamera == 0)

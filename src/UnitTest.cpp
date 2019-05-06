@@ -62,12 +62,16 @@ void UnitTest::Cloud_test() {
 }
 
 void UnitTest::multipates_camera_test() {
-    MindVisionCamera cam;
-    cv::Mat frame;
+    MindVisionCamera cam_0,cam_1;
+    cv::Mat frame_0,frame_1;
     while(true)
     {
-        cam>>frame;
-        cv::imshow("frame",frame);
+        cam_0>>frame_0;
+        cam_1>>frame_1;
+        cv::namedWindow("frame_0",cv::WINDOW_NORMAL);
+        cv::namedWindow("frame_1",cv::WINDOW_NORMAL);
+		cv::imshow("frame_0",frame_0);
+		cv::imshow("frame_1",frame_1);
         int k=cv::waitKey(1);
         if(k=='q')
             break;
