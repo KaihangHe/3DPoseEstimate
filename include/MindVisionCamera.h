@@ -2,7 +2,7 @@
 #ifndef MINDVISIONCAMERA_MINDVISIONCAMERA_H
 #define MINDVISIONCAMERA_MINDVISIONCAMERA_H
 
-#include"CameraApi.h"
+#include"MindVisionCameraSDK/CameraApi.h"
 #include<opencv2/opencv.hpp>
 
 using std::cout;

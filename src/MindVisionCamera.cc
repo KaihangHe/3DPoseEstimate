@@ -3,7 +3,6 @@
 // modify  by hero group
 //
 
-#include <CameraDefine.h>
 #include "MindVisionCamera.h"
 
 int MindVisionCamera::camera_num = 0;

@@ -5,13 +5,13 @@ include_directories(include)
 link_libraries(/lib/libMVSDK.so)
 set(
         src
-        src/main.cc
+        src/main.cpp
         src/Calibrator.cc
-        src/FeaturePtsCatcher.cc
-        src/CloudPtsGenerator.cc
         src/VizViewer.cc
-        src/UnitTest.cc
-        src/MindVisionCamera.cc)
+        src/PoseEstiamte.cc
+        src/MindVisionCamera.cc
+        src/FeaturePtsCatcher.cpp
+        src/CloudPtsGenerator.cpp)
 set(CMAKE_CXX_STANDARD 11)
 add_executable(SFM ${src})
 target_link_libraries(SFM ${OpenCV_LIBS})

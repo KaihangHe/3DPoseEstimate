@@ -2,15 +2,15 @@
 // Created by nicapoet on 19-3-3.
 //
 
-#ifndef SFM_UNITTEST_H
-#define SFM_UNITTEST_H
+#ifndef SFM_POSEESTIAMTE_H
+#define SFM_POSEESTIAMTE_H
 
 #include "Calibrator.h"
 #include "FeaturePtsCatcher.h"
 #include "CloudPtsGenerator.h"
 #include "MindVisionCamera.h"
 
-class UnitTest {
+class PoseEstiamte {
 public:
     void Calibrator_test();
 
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif //SFM_UNITTEST_H
+#endif //SFM_POSEESTIAMTE_H
