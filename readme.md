@@ -6,6 +6,7 @@
 - opencv 4.0.1 
      * contrib
      * viz
+- PCL 1.9
 ---
 ##### Calibrator
 _相机标定_
