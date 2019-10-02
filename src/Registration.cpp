@@ -5,6 +5,7 @@
 #include<pcl/io/vtk_lib_io.h>
 #include<pcl/common/transforms.h>
 #include<pcl/filters/passthrough.h>
+#include<pcl/registration/icp.h>
 
 using namespace std;
 
@@ -38,12 +39,28 @@ int main()
 	transform_Matrix.translation() << 100, 0, 0;
 	pcl::transformPointCloud(*cloud_qq_A, *cloud_qq_A, transform_Matrix);
 
+	//! icp point cloud registraion
+	pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp_registration;
+	icp_registration.setInputCloud(cloud_qq_A);
+	icp_registration.setInputTarget(cloud_qq);
+	pcl::PointCloud<pcl::PointXYZ>::Ptr final_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+	icp_registration.align(*final_cloud);
 	//!visualization
 	pcl::visualization::PCLVisualizer viewer("viewer");
-	viewer.addPointCloud(cloud_qq_A, "half qq A");
-	viewer.addPointCloud(cloud_qq_B, "half qq B");
-	viewer.addCoordinateSystem(100, "origin coordinate");
-
+	//! set viewport num 1
+	int src_viewerport = 1;
+	viewer.createViewPort(0, 0, 0.5, 1, src_viewerport);
+	viewer.addPointCloud(cloud_qq_A, "half qq A", src_viewerport);
+	viewer.addPointCloud(cloud_qq, "half qq", src_viewerport);
+	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0,1,0,"half qq A",src_viewerport);
+	viewer.addCoordinateSystem(100, "origin coordinate", src_viewerport);
+	//! set vieweport num 2
+	int dst_viewerport = 2;
+	viewer.createViewPort(0.5, 0, 1, 1, dst_viewerport);
+	viewer.addPointCloud(final_cloud, "icp_output", dst_viewerport);
+	viewer.addPointCloud(cloud_qq, "target B", dst_viewerport);
+	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0,1,0,"icp_output",dst_viewerport);
+	viewer.addCoordinateSystem(100, "output coordinate", dst_viewerport);
 	while (!viewer.wasStopped())
 	{
 		viewer.spinOnce();

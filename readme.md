@@ -31,4 +31,5 @@ _工业相机驱动_
 ##### VizViewer
 _三维可视化模块_
 ![ 点云三维视图 ](others/images/1.png)
- 
+# ICP配准:
+![ ICP 点云配准](others/icp_runtime.png)
