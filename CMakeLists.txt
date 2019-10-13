@@ -28,7 +28,8 @@ set(SRC_CODE
         src/CloudPtsGenerator.cpp
         src/VizViewer.cpp
         src/MindVisionCamera.cpp
-        src/PoseEstiamte.cpp)
+        src/PoseEstiamte.cpp
+        src/Registration.cpp)
 
 # Declare the executable target
 add_executable(3DPoseEstimate ${SRC_CODE})

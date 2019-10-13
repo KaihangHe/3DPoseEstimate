@@ -1,15 +1,11 @@
 //
 // Created by nicapoet on 2019/10/2.
 //
-#include<pcl/visualization/pcl_visualizer.h>
-#include<pcl/io/vtk_lib_io.h>
-#include<pcl/common/transforms.h>
-#include<pcl/filters/passthrough.h>
-#include<pcl/registration/icp.h>
+#include "Registration.h"
 
 using namespace std;
 
-int main()
+void Registration::registrate()
 {
 	//!load stl model and transform to point cloud
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_qq(new pcl::PointCloud<pcl::PointXYZ>);
@@ -52,14 +48,16 @@ int main()
 	viewer.createViewPort(0, 0, 0.5, 1, src_viewerport);
 	viewer.addPointCloud(cloud_qq_A, "half qq A", src_viewerport);
 	viewer.addPointCloud(cloud_qq, "half qq", src_viewerport);
-	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0,1,0,"half qq A",src_viewerport);
+	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 0, 1, 0, "half qq A",
+											src_viewerport);
 	viewer.addCoordinateSystem(100, "origin coordinate", src_viewerport);
 	//! set vieweport num 2
 	int dst_viewerport = 2;
 	viewer.createViewPort(0.5, 0, 1, 1, dst_viewerport);
 	viewer.addPointCloud(final_cloud, "icp_output", dst_viewerport);
 	viewer.addPointCloud(cloud_qq, "target B", dst_viewerport);
-	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0,1,0,"icp_output",dst_viewerport);
+	viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, 0, 1, 0, "icp_output",
+											dst_viewerport);
 	viewer.addCoordinateSystem(100, "output coordinate", dst_viewerport);
 	while (!viewer.wasStopped())
 	{
